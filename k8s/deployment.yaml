@@ -37,7 +37,7 @@ spec:
       volumes:
       - name: app-body
         configMap:
-          name: {{ .Values.appName }}-app-body
+          name: online-app-body
           items:
           - key: "body"
             path: "index.html"
