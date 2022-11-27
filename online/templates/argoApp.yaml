@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/nabladev/unlimited-poc
+    repoURL: https://raw.githubusercontent.com/nabladev/unlimited-poc/main/index.yaml?token=GHSAT0AAAAAABY4UAFS2RRBM4WMAU3WW2QKY4D5GOA
     targetRevision: HEAD
     path: online
     chart: online
