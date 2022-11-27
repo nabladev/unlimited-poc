@@ -7,10 +7,8 @@ metadata:
 spec:
   selector:
     app: {{ $name }}-online-nginx
-  type: NodePort
   ports:
   - port: 9000
-    nodePort: 31010
     protocol: TCP
     targetPort: 80
 ---
