@@ -1,0 +1,7 @@
+appVersion: 1.14.2
+appName: online
+
+tenants:
+  atg:
+  alabama:
+  florida:
