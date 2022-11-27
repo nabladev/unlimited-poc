@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  online:
+  - apiVersion: v2
+    appVersion: 1.14.2
+    created: "2022-11-27T23:36:33.478308+01:00"
+    description: A Helm chart that deploys the online app
+    digest: 931548cb3f0dbeed7c5a8371a39ba47967ab82e76b3009bbcf74dd09071a99f1
+    name: online
+    type: application
+    urls:
+    - https://github.com/nabladev/unlimited-poc/online-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-11-27T23:36:33.477666+01:00"
