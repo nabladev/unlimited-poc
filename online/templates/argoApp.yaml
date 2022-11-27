@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:nabladev/unlimited-poc.git
+    repoURL: https://github.com/nabladev/unlimited-poc
     targetRevision: HEAD
     path: online
     chart: online
@@ -20,4 +20,5 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: {{ $name }}
+---
 {{- end }}

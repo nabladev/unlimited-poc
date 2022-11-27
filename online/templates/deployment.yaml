@@ -4,9 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ $name }}-online-app-body
   namespace: {{ $name }}
-
 data:
-  # property-like keys; each key maps to a simple value
   body: "<html><title>Second app</title><body><div>I'm the app 1.23.2!</div></body></html>"
 
 ---
@@ -15,6 +13,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $name }}-online-deployment
+  namespace: {{ $name }}
   labels:
     app: {{ $name }}-online-nginx
 spec:
@@ -58,8 +57,9 @@ spec:
       volumes:
       - name: app-body
         configMap:
-          name: online-app-body
+          name: {{ $name }}-online-app-body
           items:
           - key: "body"
             path: "index.html"
+---
 {{- end}}
