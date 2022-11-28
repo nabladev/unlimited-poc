@@ -11,7 +11,7 @@ spec:
     targetRevision: 0.1.2
     path: online-tenants
     valueFiles:
-      - 'values-atg.yaml'
+      - '../online-tenents/values-atg.yaml'
 
   destination: 
     server: https://kubernetes.default.svc
