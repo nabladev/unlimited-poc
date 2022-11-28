@@ -37,7 +37,7 @@ spec:
   - list:
       elements:
       - tenant: atg
-        version: 0.1.2
+        version: 0.1.3
         values: |
             appVersion: 1.14.2
             appName: online
@@ -45,7 +45,7 @@ spec:
             message: "Welcome ATG!"
             tenant: atg
       - tenant: florida
-        version: 0.1.2
+        version: 0.1.3
         values: |
             appVersion: 1.14.2
             appName: online
@@ -60,7 +60,7 @@ spec:
       source:
         repoURL: https://nabladev.github.io/nabla-helm-charts/
         chart: online-single
-        targetRevision: 0.1.2
+        targetRevision: 0.1.3
         
         helm:
           values: {{values}}
