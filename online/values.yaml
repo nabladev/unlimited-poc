@@ -3,5 +3,8 @@ appName: online
 
 tenants:
   atg:
+    ok: 1
   alabama:
+    ok: 2
   florida:
+    ok: 3

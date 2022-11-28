@@ -7,11 +7,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://raw.githubusercontent.com/nabladev/unlimited-poc/main/index.yaml?token=GHSAT0AAAAAABY4UAFS2RRBM4WMAU3WW2QKY4D5GOA
+    repoURL: https://nabladev.github.io/nabla-helm-charts/
     targetRevision: HEAD
     path: online
     chart: online
-    targetRevision: 1.0.0
+    targetRevision: 0.1.0
     # chart: sealed-secrets
     # repoURL: https://bitnami-labs.github.io/sealed-secrets
     # targetRevision: 1.16.1
