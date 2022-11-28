@@ -1,64 +1,62 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: online
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://nabladev.github.io/nabla-helm-charts/
+#     chart: online-single
+#     targetRevision: 0.1.2
+#     helm:
+#       values: |
+#         appVersion: 1.14.2
+#         appName: online
+
+#         message: "Welcome ATG!"
+#         tenant: atg
+
+#   destination: 
+#     server: https://kubernetes.default.svc
+#     namespace: atg
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true
+#     automated:
+#       selfHeal: true
+#       prune: true
+
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: online
   namespace: argocd
 spec:
-  project: default
-  source:
-    repoURL: https://nabladev.github.io/nabla-helm-charts/
-    chart: online-single
-    targetRevision: 0.1.2
-    helm:
-      values: |
-        appVersion: 1.14.2
-        appName: online
-
-        message: "Welcome ATG!"
-        tenant: atg
-
-      # valueFiles:
-      #   - values-atg.yaml
-
-  destination: 
-    server: https://kubernetes.default.svc
-    namespace: atg
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: ApplicationSet
-# metadata:
-#   name: online
-# spec:
-#   generators:
-#   - list:
-#       elements:
-#       - tenant: atg
-#         version: 0.1.2
-#       - tenant: florida
-#         version: 0.1.2
-#   template:
-#     metadata:
-#       name: '{{tenant}}-online'
-#     spec:
-#       project: default
-#       source:
-#         repoURL: https://nabladev.github.io/nabla-helm-charts/
-#         chart: online-single
-#         targetRevision: 0.1.2
+  generators:
+  - list:
+      elements:
+      - tenant: atg
+        version: 0.1.2
+      - tenant: florida
+        version: 0.1.2
+  template:
+    metadata:
+      name: '{{tenant}}-online'
+    spec:
+      project: default
+      source:
+        repoURL: https://nabladev.github.io/nabla-helm-charts/
+        chart: online-single
+        targetRevision: 0.1.2
         
-#         helm:
-#           values: |
-#             appVersion: 1.14.2
-#             appName: online
+        helm:
+          values: |
+            appVersion: 1.14.2
+            appName: online
 
-#             message: "Welcome ATG!"
-#             tenant: atg
-#       destination:
-#         server: "https://kubernetes.default.svc"
-#         namespace: '{{tenant}}'
+            message: "Welcome ATG!"
+            tenant: atg
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: '{{tenant}}'
