@@ -10,15 +10,15 @@ spec:
     chart: online-single
     targetRevision: 0.1.2
     helm:
-      # values: |
-      #   appVersion: 1.14.2
-      #   appName: online
+      values: |
+        appVersion: 1.14.2
+        appName: online
 
-      #   message: "Welcome ATG!"
-      #   tenant: atg
+        message: "Welcome ATG!"
+        tenant: atg
 
-      valueFiles:
-        - values-atg.yaml
+      # valueFiles:
+      #   - values-atg.yaml
 
   destination: 
     server: https://kubernetes.default.svc
