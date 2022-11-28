@@ -11,8 +11,15 @@ spec:
     targetRevision: 0.1.2
     # path: online-single
     helm:
-      valueFiles:
-        - 'values-atg.yaml'
+      values: |
+        appVersion: 1.14.2
+        appName: online
+
+        message: "Welcome ATG!"
+        tenant: atg
+
+      # valueFiles:
+        # - 'values-atg.yaml'
 
   destination: 
     server: https://kubernetes.default.svc
