@@ -21,7 +21,7 @@ spec:
         targetRevision: HEAD
         path: online-tenants
         valueFiles:
-          - 'values-{{tenant}}.yaml'
+          - 'values-atg.yaml'
       destination:
         server: "https://kubernetes.default.svc"
         namespace: '{{tenant}}'
