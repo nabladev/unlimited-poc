@@ -38,8 +38,20 @@ spec:
       elements:
       - tenant: atg
         version: 0.1.2
+        values: |
+            appVersion: 1.14.2
+            appName: online
+
+            message: "Welcome ATG!"
+            tenant: atg
       - tenant: florida
         version: 0.1.2
+        values: |
+            appVersion: 1.14.2
+            appName: online
+
+            message: "Welcome ATG!"
+            tenant: florida
   template:
     metadata:
       name: '{{tenant}}-online'
