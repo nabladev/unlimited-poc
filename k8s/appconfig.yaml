@@ -1,18 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: atg-online
-  namespace: argocd
+  name: online
 spec:
-  project: default
-  source:
-    repoURL: https://nabladev.github.io/nabla-helm-charts/
-    targetRevision: HEAD
-    path: online-single
-    chart: online-single
-    targetRevision: 0.1.1
-    helm:
-      releaseName: online-release
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: atg
+  generators:
+  - list:
+      elements:
+      - tenant: atg
+        version: 0.1.2
+      - tenant: florida
+        version: 0.1.2
+  template:
+    metadata:
+      name: '{{tenant}}-online'
+    spec:
+      source:
+        repoURL: https://nabladev.github.io/nabla-helm-charts/
+        chart: online-single
+        targetRevision: HEAD
+        path: online-tenants
+        valueFiles:
+          - 'values-{{tenant}}.yaml'
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: '{{tenant}}'
