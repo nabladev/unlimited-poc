@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: florida-online
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://nabladev.github.io/nabla-helm-charts/
+    targetRevision: HEAD
+    path: online-single
+    chart: online-single
+    targetRevision: 0.1.1
+    helm:
+      releaseName: online-release
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: florida
