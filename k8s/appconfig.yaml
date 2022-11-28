@@ -9,8 +9,9 @@ spec:
     repoURL: https://nabladev.github.io/nabla-helm-charts/
     chart: online-single
     targetRevision: 0.1.2
-    valueFiles:
-      - '../online-tenants/values-atg.yaml'
+    helm:
+      valueFiles:
+        - '../online-tenants/values-atg.yaml'
 
   destination: 
     server: https://kubernetes.default.svc
