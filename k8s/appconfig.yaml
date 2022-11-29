@@ -55,12 +55,7 @@ spec:
         helm:
           valueFiles:
             - '{{values}}'
-          # values: |
-          #   appVersion: 1.14.2
-          #   appName: online
 
-          #   message: "Welcome ATG!"
-          #   tenant: florida
       destination:
         server: "https://kubernetes.default.svc"
         namespace: '{{tenant}}'
