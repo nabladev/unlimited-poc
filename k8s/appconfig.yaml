@@ -37,10 +37,10 @@ spec:
   - list:
       elements:
       - tenant: atg
-        version: 0.1.4
+        version: 0.1.5
         helmfile: values-atg.yaml
       - tenant: florida
-        version: 0.1.4
+        version: 0.1.5
         helmfile: values-florida.yaml
   template:
     metadata:
