@@ -38,7 +38,7 @@ spec:
       elements:
       - tenant: atg
         version: 0.1.4
-        helmfile: values-atgns.yaml
+        helmfile: values-atg.yaml
       - tenant: florida
         version: 0.1.4
         helmfile: values-florida.yaml
