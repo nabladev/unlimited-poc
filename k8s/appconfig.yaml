@@ -38,8 +38,10 @@ spec:
       elements:
       - tenant: atg
         version: 0.1.3
+        values: values-atg.yaml
       - tenant: florida
         version: 0.1.3
+        values: values-florida.yaml
   template:
     metadata:
       name: '{{tenant}}-online'
@@ -52,7 +54,7 @@ spec:
         
         helm:
           valueFiles:
-            - values-atg.yaml
+            - '{{values}}'
           # values: |
           #   appVersion: 1.14.2
           #   appName: online
