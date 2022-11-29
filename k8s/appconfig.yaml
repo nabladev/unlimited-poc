@@ -38,10 +38,10 @@ spec:
       elements:
       - tenant: atg
         version: 0.1.3
-        values: values-atg.yaml
+        helmfile: values-atg.yaml
       - tenant: florida
         version: 0.1.3
-        values: values-florida.yaml
+        helmfile: values-florida.yaml
   template:
     metadata:
       name: '{{tenant}}-online'
@@ -54,7 +54,7 @@ spec:
         
         helm:
           valueFiles:
-            - '{{values}}'
+            - '{{helmfile}}'
 
       destination:
         server: "https://kubernetes.default.svc"
