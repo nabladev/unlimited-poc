@@ -1,32 +1,3 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: online
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://nabladev.github.io/nabla-helm-charts/
-#     chart: online-single
-#     targetRevision: 0.1.2
-#     helm:
-#       values: |
-#         appVersion: 1.14.2
-#         appName: online
-
-#         message: "Welcome ATG!"
-#         tenant: atg
-
-#   destination: 
-#     server: https://kubernetes.default.svc
-#     namespace: atg
-#   syncPolicy:
-#     syncOptions:
-#     - CreateNamespace=true
-#     automated:
-#       selfHeal: true
-#       prune: true
-
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -37,10 +8,10 @@ spec:
   - list:
       elements:
       - tenant: atg
-        version: 0.1.11
+        version: 0.1.12
         helmfile: values-atg.yaml
       - tenant: florida
-        version: 0.1.11
+        version: 0.1.12
         helmfile: values-florida.yaml
   template:
     metadata:
