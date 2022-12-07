@@ -50,7 +50,7 @@ spec:
       source:
         repoURL: https://nabladev.github.io/nabla-helm-charts/
         chart: online-single
-        targetRevision: {{version}}
+        targetRevision: '{{version}}'
         
         helm:
           valueFiles:
